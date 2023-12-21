@@ -20,7 +20,6 @@ export default function Navbar() {
             rightSection={item.rightSection}
             icon={<item.icon size="1rem" stroke={1.5} />}
             onClick={() => setActive(index)}
-            color={'violet'}
         />
     ));
 
