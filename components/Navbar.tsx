@@ -10,6 +10,7 @@ const data = [
 
 export default function Navbar() {
     const [active, setActive] = useState(0);
+    // @ts-ignore
     const items = data.map((item, index) => (
         <NavLink
             href="#required-for-focus"
@@ -18,7 +19,6 @@ export default function Navbar() {
             label={item.label}
             description={item.description}
             rightSection={item.rightSection}
-            icon={<item.icon size="1rem" stroke={1.5} />}
             onClick={() => setActive(index)}
         />
     ));
