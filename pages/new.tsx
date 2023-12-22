@@ -16,16 +16,14 @@ import {
 import {useState} from 'react';
 import HeroEditPreview from "@/components/HeroEditPreview";
 import {Hero} from '@/interfaces'
-import {useDisclosure} from "@mantine/hooks";
-
+import HeroEditModal from "@/components/HeroEditModal";
 export default function New() {
     const [heroes, setHeroes] = useState([new Hero()])
     const [username, setUsername] = useState('');
     const [server, setServer] = useState('');
     const [teamType, setTeamType] = useState<string | null>('');
     const [teamDescription, setTeamDescription] = useState('');
-    const [opened, {open, close}] = useDisclosure(true);
-    
+
     const teamTypes = [
         "Wyvern", "Banshee", "Golem", "Guild War Defense", "Guild War Offense",
         "Arena Defense", "RTA", "Abyss", "Adventure", "Brutal Pherus",
@@ -34,7 +32,7 @@ export default function New() {
 
     return (
         <Grid>
-            <Modal opened={opened} onClose={close}/>
+            <HeroEditModal />
             <Grid.Col span={{base: 12, md: 12, lg: 12}}>
                 <Card shadow="sm" padding="lg" radius="md" withBorder>
                     <Card.Section>

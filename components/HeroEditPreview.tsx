@@ -11,7 +11,7 @@ export default function HeroEditPreview(props: { heroData: any }) {
     }
 
     return (
-        <Card shadow="sm" padding="lg" radius="md" withBorder>
+        <Card shadow="sm" padding="lg" withBorder>
             <Group mt="md" mb="xs">
                 <Avatar src={props.heroData.name !== '' ? getHeroPortrait(props.heroData.name) : null}/>
                 <Text size="md">{props.heroData.name !== '' ? props.heroData.name : 'Awaiting Selection...'}</Text>
