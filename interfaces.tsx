@@ -1,5 +1,5 @@
 export class Hero {
-    name: string = '';
+    name: string = 'Arbiter Vildred';
     awakeningLevel: string = '';
     necklaceStat: string = '';
     ringStat: string = '';

@@ -19,9 +19,13 @@ import {Hero} from '@/interfaces'
 import {useDisclosure} from "@mantine/hooks";
 
 export default function New() {
-    const [value, setValue] = useState('');
     const [heroes, setHeroes] = useState([new Hero()])
+    const [username, setUsername] = useState('');
+    const [server, setServer] = useState('');
+    const [teamType, setTeamType] = useState<string | null>('');
+    const [teamDescription, setTeamDescription] = useState('');
     const [opened, {open, close}] = useDisclosure(true);
+    
     const teamTypes = [
         "Wyvern", "Banshee", "Golem", "Guild War Defense", "Guild War Offense",
         "Arena Defense", "RTA", "Abyss", "Adventure", "Brutal Pherus",
@@ -56,13 +60,13 @@ export default function New() {
                     <Fieldset legend={"Your User Information"} variant={"unstyled"}>
                         <TextInput
                             label={"Username"}
-                            value={value}
-                            onChange={(event) => setValue(event.currentTarget.value)}
+                            value={username}
+                            onChange={(event) => setUsername(event.currentTarget.value)}
                         />
                         <TextInput
                             label={"Server"}
-                            value={value}
-                            onChange={(event) => setValue(event.currentTarget.value)}
+                            value={server}
+                            onChange={(event) => setServer(event.currentTarget.value)}
                         />
                     </Fieldset>
                 </Paper>
@@ -72,12 +76,14 @@ export default function New() {
                     <Fieldset legend={"Your Team Information"} variant={"unstyled"}>
                         <TextInput
                             label={"Team Description"}
-                            value={value}
-                            onChange={(event) => setValue(event.currentTarget.value)}
+                            value={teamDescription}
+                            onChange={(event) => setTeamDescription(event.currentTarget.value)}
                         />
                         <Select
                             label={"Content Type"}
                             data={teamTypes}
+                            value={teamType}
+                            onChange={setTeamType}
                         >
                         </Select>
                     </Fieldset>
