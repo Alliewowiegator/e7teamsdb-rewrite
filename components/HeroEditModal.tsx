@@ -2,6 +2,7 @@ import {Box, Card, NavLink, Button, Group, Text, Avatar, Modal, Grid, Select, In
 import {useDisclosure} from "@mantine/hooks";
 import {Hero} from "@/interfaces";
 import {allHeroInfo} from "@/data/heroData";
+import {allArtifactInfo} from "@/data/artifactData";
 
 export default function HeroEditModal(props: { }) {
     const [opened, {open, close}] = useDisclosure(true);
@@ -9,6 +10,14 @@ export default function HeroEditModal(props: { }) {
         attack: "Attack", defense: "Defense", health: "Health", speed: "Speed",
         criticalHitChance: "Critical Hit Chance", criticalHitDamage: "Critical Hit Damage", effectiveness: "Effectiveness", effectResistance: "Effect Resistance", dualAttackChance: "Dual Attack Chance",
     }
+
+    const imprintTypes = ['Imprint Release', 'Imprint Concentration'];
+    const imprints = ["B", "A", "S", "SS", "SSS"]
+    const setEffects = ["Attack Set", "Defense Set", "Health Set", "Speed Set",
+        "Critical Set", "Destruction Set", "Hit Set", "Resist Set", "Lifesteal Set",
+        "Counter Set", "Unity Set", "Immunity Set", "Rage Set", "Penetration Set",
+        "Revenge Set", "Injury Set"
+    ]
 
     return (
         <Modal opened={opened} onClose={close} title={"Editing Arbiter Vildred"} size={'lg'}>
@@ -24,30 +33,57 @@ export default function HeroEditModal(props: { }) {
                 <Grid.Col span={{base: 12, md: 12, lg: 12}}>
                     <Select
                         label={"Awakening Level"}
+                        data={Array.from({ length: 6}, (v, i) => (i + 1).toString())}
                     >
                     </Select>
                 </Grid.Col>
                 <Grid.Col span={{base: 12, md: 12, lg: 6}}>
                     <Select
+                        searchable
                         label={"Artifact"}
+                        data={allArtifactInfo.map(artifact => artifact.value)}
                     >
                     </Select>
                 </Grid.Col>
                 <Grid.Col span={{base: 12, md: 12, lg: 6}}>
                     <Select
                         label={"Artifact Level"}
+                        data={Array.from({ length: 15}, (v, i) => (i + 1).toString())}
                     >
                     </Select>
                 </Grid.Col>
                 <Grid.Col span={{base: 12, md: 12, lg: 6}}>
                     <Select
                         label={"Imprint Type"}
+                        data={imprintTypes}
                     >
                     </Select>
                 </Grid.Col>
                 <Grid.Col span={{base: 12, md: 12, lg: 6}}>
                     <Select
                         label={"Imprint Level"}
+                        data={imprints}
+                    >
+                    </Select>
+                </Grid.Col>
+                <Grid.Col span={{base: 12, md: 12, lg: 4}}>
+                    <Select
+                        label={"Set Effect One"}
+                        data={setEffects}
+                    >
+                    </Select>
+                </Grid.Col>
+                <Grid.Col span={{base: 12, md: 12, lg: 4}}>
+                    <Select
+                        label={"Set Effect Two"}
+                        data={setEffects}
+                    >
+                    </Select>
+                </Grid.Col>
+                <Grid.Col span={{base: 12, md: 12, lg: 4}}>
+                    <Select
+                        label={"Set Effect Three"}
+                        data={setEffects}
                     >
                     </Select>
                 </Grid.Col>
