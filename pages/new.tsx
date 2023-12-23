@@ -25,6 +25,8 @@ export default function New() {
     const [teamType, setTeamType] = useState<string | null>('');
     const [teamDescription, setTeamDescription] = useState('');
 
+    const removeHero = (heroToRemove: number) => setHeroes(heroes.filter((hero, index) => index !== heroToRemove));
+
     const teamTypes = [
         "Wyvern", "Banshee", "Golem", "Guild War Defense", "Guild War Offense",
         "Arena Defense", "RTA", "Abyss", "Adventure", "Brutal Pherus",
@@ -93,8 +95,8 @@ export default function New() {
                     <Grid>
                         {heroes.map((hero, index) => {
                             return (
-                                <Grid.Col span={{base: 12, md: 12, lg: 3}}>
-                                    <HeroEditPreview heroData={hero} key={index}/>
+                                <Grid.Col span={{base: 12, md: 12, lg: 3}} key={index}>
+                                    <HeroEditPreview heroData={hero} index={index} removeHero={removeHero}/>
                                 </Grid.Col>
                             )
                         })}

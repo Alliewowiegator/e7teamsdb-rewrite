@@ -3,12 +3,13 @@ import {Box, Card, NavLink, Button, Group, Text, Avatar, ActionIcon} from '@mant
 import {allHeroInfo} from "@/data/heroData";
 import {IconX} from '@tabler/icons-react';
 
-export default function HeroEditPreview(props: { heroData: any }) {
+export default function HeroEditPreview(props: { heroData: any, index: number, removeHero: any }) {
 
     function getHeroPortrait (heroName: string) {
         const hero = allHeroInfo.find(hero => hero.value === heroName);
         return hero ? hero.thumbnail : null
     }
+
 
     return (
         <Card shadow="sm" padding="lg" withBorder>
@@ -20,9 +21,11 @@ export default function HeroEditPreview(props: { heroData: any }) {
                 <Button variant={"gradient"}  mt="md" radius="md" gradient={{ from: 'violet', to: 'grape', deg: 0 }}>
                     Edit Hero
                 </Button>
-                <ActionIcon variant="subtle" color="red" mt="md" radius="md" aria-label="Delete">
-                    <IconX style={{ width: '70%', height: '70%' }} stroke={1.5} />
-                </ActionIcon>
+                { props.index !== 0 ? (
+                    <ActionIcon variant="subtle" color="red" mt="md" radius="md" aria-label="Delete">
+                        <IconX style={{ width: '70%', height: '70%' }} stroke={1.5} onClick={() => props.removeHero(props.index)} />
+                    </ActionIcon>
+                ) : null}
             </Group>
         </Card>
     )

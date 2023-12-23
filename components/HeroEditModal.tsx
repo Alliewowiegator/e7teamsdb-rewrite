@@ -1,5 +1,7 @@
 import {Box, Card, NavLink, Button, Group, Text, Avatar, Modal, Grid, Select, Input, Divider} from '@mantine/core';
 import {useDisclosure} from "@mantine/hooks";
+import {Hero} from "@/interfaces";
+import {allHeroInfo} from "@/data/heroData";
 
 export default function HeroEditModal(props: { }) {
     const [opened, {open, close}] = useDisclosure(true);
@@ -13,7 +15,9 @@ export default function HeroEditModal(props: { }) {
             <Grid>
                 <Grid.Col span={{base: 12, md: 12, lg: 12}}>
                     <Select
+                        searchable
                         label={"Hero"}
+                        data={allHeroInfo.map(hero => hero.value)}
                     >
                     </Select>
                 </Grid.Col>
