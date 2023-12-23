@@ -10,9 +10,9 @@ export default function HeroEditModal(props: { hero: Hero, opened: boolean, clos
         criticalHitChance: "Critical Hit Chance", criticalHitDamage: "Critical Hit Damage", effectiveness: "Effectiveness", effectResistance: "Effect Resistance", dualAttackChance: "Dual Attack Chance",
     }
 
-    const imprintTypes = ['Imprint Release', 'Imprint Concentration'];
-    const imprints = ["B", "A", "S", "SS", "SSS"]
-    const setEffects = ["Attack Set", "Defense Set", "Health Set", "Speed Set",
+    const imprintTypes: string[] = ['Imprint Release', 'Imprint Concentration'];
+    const imprints: string[] = ["B", "A", "S", "SS", "SSS"]
+    const setEffects: string[] = ["Attack Set", "Defense Set", "Health Set", "Speed Set",
         "Critical Set", "Destruction Set", "Hit Set", "Resist Set", "Lifesteal Set",
         "Counter Set", "Unity Set", "Immunity Set", "Rage Set", "Penetration Set",
         "Revenge Set", "Injury Set"
