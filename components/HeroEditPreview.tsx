@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import {Box, Card, NavLink, Button, Group, Text, Avatar} from '@mantine/core';
-import {allHeroInfo} from "@/data/heroData";
 
+import {Box, Card, NavLink, Button, Group, Text, Avatar, ActionIcon} from '@mantine/core';
+import {allHeroInfo} from "@/data/heroData";
+import {IconX} from '@tabler/icons-react';
 
 export default function HeroEditPreview(props: { heroData: any }) {
 
@@ -20,6 +20,9 @@ export default function HeroEditPreview(props: { heroData: any }) {
                 <Button variant={"gradient"}  mt="md" radius="md" gradient={{ from: 'violet', to: 'grape', deg: 0 }}>
                     Edit Hero
                 </Button>
+                <ActionIcon variant="subtle" color="red" mt="md" radius="md" aria-label="Delete">
+                    <IconX style={{ width: '70%', height: '70%' }} stroke={1.5} />
+                </ActionIcon>
             </Group>
         </Card>
     )

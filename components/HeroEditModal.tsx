@@ -1,4 +1,4 @@
-import {Box, Card, NavLink, Button, Group, Text, Avatar, Modal, Grid, Select, Input} from '@mantine/core';
+import {Box, Card, NavLink, Button, Group, Text, Avatar, Modal, Grid, Select, Input, Divider} from '@mantine/core';
 import {useDisclosure} from "@mantine/hooks";
 
 export default function HeroEditModal(props: { }) {
@@ -46,6 +46,9 @@ export default function HeroEditModal(props: { }) {
                         label={"Imprint Level"}
                     >
                     </Select>
+                </Grid.Col>
+                <Grid.Col span={{base: 12, md: 12, lg: 12}}>
+                    <Divider />
                 </Grid.Col>
                 {Object.entries(heroStats).map(([key, value], index) => {
                     return (

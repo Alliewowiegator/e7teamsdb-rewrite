@@ -17,6 +17,7 @@ import {useState} from 'react';
 import HeroEditPreview from "@/components/HeroEditPreview";
 import {Hero} from '@/interfaces'
 import HeroEditModal from "@/components/HeroEditModal";
+
 export default function New() {
     const [heroes, setHeroes] = useState([new Hero()])
     const [username, setUsername] = useState('');
@@ -32,7 +33,7 @@ export default function New() {
 
     return (
         <Grid>
-            <HeroEditModal />
+            <HeroEditModal/>
             <Grid.Col span={{base: 12, md: 12, lg: 12}}>
                 <Card shadow="sm" padding="lg" radius="md" withBorder>
                     <Card.Section>
@@ -100,7 +101,7 @@ export default function New() {
                     </Grid>
                 </Paper>
             </Grid.Col>
-            <Grid.Col span={6}>
+            <Grid.Col span={{base: 12, md: 12, lg: 3}} offset={{base: 0, lg: 3}}>
                 <Button variant={"gradient"}
                         fullWidth mt="md"
                         disabled={heroes.length >= 4}
@@ -113,9 +114,9 @@ export default function New() {
                 </Button>
 
             </Grid.Col>
-            <Grid.Col span={6}>
+            <Grid.Col span={{base: 12, md: 12, lg: 3}}>
                 <Button variant={"gradient"} fullWidth mt="md" radius="md"
-                        gradient={{from: 'blue', to: 'cyan', deg: 90}}>
+                        gradient={{from: 'purple', to: 'cyan', deg: 90}}>
                     Submit to Database
                 </Button>
             </Grid.Col>
