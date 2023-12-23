@@ -21,10 +21,10 @@ import {useDisclosure} from "@mantine/hooks";
 
 export default function New() {
     const [heroes, setHeroes] = useState([new Hero()])
-    const [username, setUsername] = useState('');
-    const [server, setServer] = useState('');
+    const [username, setUsername] = useState<string>('');
+    const [server, setServer] = useState<string>('');
     const [teamType, setTeamType] = useState<string | null>('');
-    const [teamDescription, setTeamDescription] = useState('');
+    const [teamDescription, setTeamDescription] = useState<string>('');
     const [opened, {open, close}] = useDisclosure(false);
     const [heroToEdit, setEditHero] = useState(new Hero());
     const [editIndex, setEditIndex] = useState<number>();
@@ -36,7 +36,7 @@ export default function New() {
     }
     const removeHero = (heroToRemove: number) => setHeroes(heroes.filter((hero, index) => index !== heroToRemove));
 
-    const teamTypes = [
+    const teamTypes: string[] = [
         "Wyvern", "Banshee", "Golem", "Guild War Defense", "Guild War Offense",
         "Arena Defense", "RTA", "Abyss", "Adventure", "Brutal Pherus",
         "Blooming Snag Lich", "Pain Pursuer Moroi", "Hopeless Symaqus", "Destructive Gigantes", "Other",
