@@ -3,7 +3,7 @@ import {Box, Card, NavLink, Button, Group, Text, Avatar, ActionIcon} from '@mant
 import {allHeroInfo} from "@/data/heroData";
 import {IconX} from '@tabler/icons-react';
 
-export default function HeroEditPreview(props: { heroData: any, index: number, removeHero: any }) {
+export default function HeroEditPreview(props: { heroData: any, index: number, removeHero: Function, openEdit: Function }) {
 
     function getHeroPortrait (heroName: string) {
         const hero = allHeroInfo.find(hero => hero.value === heroName);
@@ -18,7 +18,12 @@ export default function HeroEditPreview(props: { heroData: any, index: number, r
                 <Text size="md">{props.heroData.name !== '' ? props.heroData.name : 'Awaiting Selection...'}</Text>
             </Group>
             <Group>
-                <Button variant={"gradient"}  mt="md" radius="md" gradient={{ from: 'violet', to: 'grape', deg: 0 }}>
+                <Button variant={"gradient"}
+                        mt="md"
+                        radius="md"
+                        gradient={{ from: 'violet', to: 'grape', deg: 0 }}
+                        onClick={() => props.openEdit(props.index)}
+                >
                     Edit Hero
                 </Button>
                 { props.index !== 0 ? (

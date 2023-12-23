@@ -4,8 +4,7 @@ import {Hero} from "@/interfaces";
 import {allHeroInfo} from "@/data/heroData";
 import {allArtifactInfo} from "@/data/artifactData";
 
-export default function HeroEditModal(props: { }) {
-    const [opened, {open, close}] = useDisclosure(true);
+export default function HeroEditModal(props: { hero: Hero, opened: boolean, close: any, heroes: any, editIndex: any }) {
     const heroStats = {
         attack: "Attack", defense: "Defense", health: "Health", speed: "Speed",
         criticalHitChance: "Critical Hit Chance", criticalHitDamage: "Critical Hit Damage", effectiveness: "Effectiveness", effectResistance: "Effect Resistance", dualAttackChance: "Dual Attack Chance",
@@ -20,12 +19,14 @@ export default function HeroEditModal(props: { }) {
     ]
 
     return (
-        <Modal opened={opened} onClose={close} title={"Editing Arbiter Vildred"} size={'lg'}>
+        <Modal opened={props.opened} onClose={props.close} title={props.hero.name !== '' ? props.hero.name : 'Awaiting Selection...'} size={'lg'}>
             <Grid>
                 <Grid.Col span={{base: 12, md: 12, lg: 12}}>
                     <Select
                         searchable
                         label={"Hero"}
+                        defaultValue={props.hero.name}
+                        onChange={(value) => props.heroes[props.editIndex].name = value}
                         data={allHeroInfo.map(hero => hero.value)}
                     >
                     </Select>

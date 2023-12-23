@@ -10,7 +10,6 @@ const data = [
 
 export default function Navbar() {
     const [active, setActive] = useState(0);
-    // @ts-ignore
     const items = data.map((item, index) => (
         <NavLink
             href={item.page}
@@ -24,5 +23,5 @@ export default function Navbar() {
         />
     ));
 
-    return <Box >{items}</Box>;
+    return <Box>{items}</Box>;
 }

@@ -17,6 +17,7 @@ import {useState} from 'react';
 import HeroEditPreview from "@/components/HeroEditPreview";
 import {Hero} from '@/interfaces'
 import HeroEditModal from "@/components/HeroEditModal";
+import {useDisclosure} from "@mantine/hooks";
 
 export default function New() {
     const [heroes, setHeroes] = useState([new Hero()])
@@ -24,7 +25,15 @@ export default function New() {
     const [server, setServer] = useState('');
     const [teamType, setTeamType] = useState<string | null>('');
     const [teamDescription, setTeamDescription] = useState('');
+    const [opened, {open, close}] = useDisclosure(false);
+    const [heroToEdit, setEditHero] = useState(new Hero());
+    const [editIndex, setEditIndex] = useState<number>();
 
+    const openEdit = (heroToEdit: number) => {
+        setEditIndex(heroToEdit);
+        setEditHero({...heroes[heroToEdit]})
+        open()
+    }
     const removeHero = (heroToRemove: number) => setHeroes(heroes.filter((hero, index) => index !== heroToRemove));
 
     const teamTypes = [
@@ -35,7 +44,7 @@ export default function New() {
 
     return (
         <Grid>
-            <HeroEditModal/>
+            <HeroEditModal opened={opened} close={close} hero={heroToEdit} heroes={heroes} editIndex={editIndex} />
             <Grid.Col span={{base: 12, md: 12, lg: 12}}>
                 <Card shadow="sm" padding="lg" radius="md" withBorder>
                     <Card.Section>
@@ -96,7 +105,7 @@ export default function New() {
                         {heroes.map((hero, index) => {
                             return (
                                 <Grid.Col span={{base: 12, md: 12, lg: 3}} key={index}>
-                                    <HeroEditPreview heroData={hero} index={index} removeHero={removeHero}/>
+                                    <HeroEditPreview heroData={hero} index={index} removeHero={removeHero} openEdit={openEdit}/>
                                 </Grid.Col>
                             )
                         })}
