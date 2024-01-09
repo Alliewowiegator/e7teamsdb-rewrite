@@ -11,7 +11,7 @@ import {
     TextInput,
     Select,
     Divider,
-    Modal
+    Modal, MultiSelect
 } from '@mantine/core';
 import {useState} from 'react';
 import HeroEditPreview from "@/components/HeroEditPreview";
@@ -42,6 +42,8 @@ export default function New() {
         "Blooming Snag Lich", "Pain Pursuer Moroi", "Hopeless Symaqus", "Destructive Gigantes", "Other",
     ];
 
+    const teamTags: string[] = ['Cleave', 'Counter', 'Speed', 'Bomb Squad', 'Cleanse', 'One-Shot', 'Sustain', 'Bruiser', 'Push', 'Injury', 'Burn', 'Control'];
+
     return (
         <Grid>
             <HeroEditModal opened={opened} close={close} hero={heroToEdit} heroes={heroes} editIndex={editIndex} />
@@ -65,37 +67,50 @@ export default function New() {
                 <Divider my="sm" labelPosition="center"/>
             </Grid.Col>
 
-            <Grid.Col span={{base: 12, md: 12, lg: 6}}>
+            <Grid.Col span={{base: 12, md: 12, lg: 12}}>
                 <Paper shadow="xs" withBorder p="xl">
-                    <Fieldset legend={"Your User Information"} variant={"unstyled"}>
-                        <TextInput
-                            label={"Username"}
-                            value={username}
-                            onChange={(event) => setUsername(event.currentTarget.value)}
-                        />
-                        <TextInput
-                            label={"Server"}
-                            value={server}
-                            onChange={(event) => setServer(event.currentTarget.value)}
-                        />
-                    </Fieldset>
-                </Paper>
-            </Grid.Col>
-            <Grid.Col span={{base: 12, md: 12, lg: 6}}>
-                <Paper shadow="xs" withBorder p="xl">
-                    <Fieldset legend={"Your Team Information"} variant={"unstyled"}>
-                        <TextInput
-                            label={"Team Description"}
-                            value={teamDescription}
-                            onChange={(event) => setTeamDescription(event.currentTarget.value)}
-                        />
-                        <Select
-                            label={"Content Type"}
-                            data={teamTypes}
-                            value={teamType}
-                            onChange={setTeamType}
-                        >
-                        </Select>
+                    <Fieldset legend={"Your Team and User Information"} variant={"unstyled"}>
+                        <Grid>
+                            <Grid.Col span={{base: 12, md: 12, lg: 6}}>
+                                <TextInput
+                                    label={"Username"}
+                                    value={username}
+                                    onChange={(event) => setUsername(event.currentTarget.value)}
+                                />
+                            </Grid.Col>
+                            <Grid.Col span={{base: 12, md: 12, lg: 6}}>
+                                <TextInput
+                                    label={"Server"}
+                                    value={server}
+                                    onChange={(event) => setServer(event.currentTarget.value)}
+                                />
+                            </Grid.Col>
+                            <Grid.Col span={12}>
+                                <Divider my="sm" labelPosition="center" variant="dotted"/>
+                            </Grid.Col>
+                            <Grid.Col span={{base: 12, md: 12, lg: 4}}>
+                                <TextInput
+                                    label={"Team Description"}
+                                    value={teamDescription}
+                                    onChange={(event) => setTeamDescription(event.currentTarget.value)}
+                                />
+                            </Grid.Col>
+                            <Grid.Col span={{base: 12, md: 12, lg: 4}}>
+                                <Select
+                                    label={"Content Type"}
+                                    data={teamTypes}
+                                    value={teamType}
+                                    onChange={setTeamType}
+                                />
+                            </Grid.Col>
+                            <Grid.Col span={{base: 12, md: 12, lg: 4}}>
+                                <MultiSelect
+                                    label="Team Tags"
+                                    placeholder="Tag"
+                                    data={teamTags}
+                                />
+                            </Grid.Col>
+                        </Grid>
                     </Fieldset>
                 </Paper>
             </Grid.Col>

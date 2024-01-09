@@ -1,5 +1,5 @@
 
-import {Box, Card, NavLink, Button, Group, Text, Avatar, ActionIcon} from '@mantine/core';
+import {Card, Button, Group, Text, Avatar, ActionIcon} from '@mantine/core';
 import {allHeroInfo} from "@/data/heroData";
 import {IconX} from '@tabler/icons-react';
 
