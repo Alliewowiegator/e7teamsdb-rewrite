@@ -48,7 +48,7 @@ export default function CompPreview(props: any) {
                     <Center>
                         <Group>
                             {props.heroes.map((hero:any, index: number) => {
-                               return <Avatar src={getHeroPortrait(hero.name)} size="xl" key={index} />
+                               return <Avatar src={getHeroPortrait(hero.name)} size="lg" key={index} />
                             })}
                         </Group>
                     </Center>
