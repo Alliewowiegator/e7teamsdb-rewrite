@@ -31,19 +31,19 @@ export default function All({teamComp}: InferGetServerSidePropsType<typeof getSe
             <Grid.Col span={12}>
                 <Paper shadow="xs" withBorder p="xl">
                     <Grid>
-                        <Grid.Col span={4}>
+                        <Grid.Col span={{base: 12, md: 4, lg: 4}}>
                             <MultiSelect
                                 label="Filter By Content Type"
                                 data={utilityData.teamTypes}
                             />
                         </Grid.Col>
-                        <Grid.Col span={4}>
+                        <Grid.Col span={{base: 12, md: 4, lg: 4}}>
                             <MultiSelect
                                 label="Filter By Tags"
                                 data={utilityData.teamTags}
                             />
                         </Grid.Col>
-                        <Grid.Col span={4}>
+                        <Grid.Col span={{base: 12, md: 4, lg: 4}}>
                             <MultiSelect
                                 label="Filter By Heroes"
                                 data={allHeroInfo.map(hero => hero.value)}

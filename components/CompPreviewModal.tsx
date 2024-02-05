@@ -1,4 +1,3 @@
-import {IconLink, IconPhoto} from "@tabler/icons-react";
 import {allHeroInfo} from "@/data/heroData";
 import {Modal} from "@mantine/core";
 
