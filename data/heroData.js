@@ -6,6 +6,12 @@ export const allHeroInfo = [
         "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1144_s.png"
     },
     {
+        "value": "Abyssal Yufine",
+        "viewValue": "Abyssal Yufine",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c2016_s.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c2016_s.png"
+    },
+    {
         "value": "Achates",
         "viewValue": "Achates",
         "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1017_s.png",
@@ -106,6 +112,12 @@ export const allHeroInfo = [
         "viewValue": "Amid",
         "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1143_s.png",
         "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1143_s.png"
+    },
+    {
+        "value": "Amiki",
+        "viewValue": "Amiki",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3158_s.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3158_s.png"
     },
     {
         "value": "Angel of Light Angelica",
@@ -300,6 +312,12 @@ export const allHeroInfo = [
         "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c2039_s.png"
     },
     {
+        "value": "Blooming Lidica",
+        "viewValue": "Blooming Lidica",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c5046_s.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c5046_s.png"
+    },
+    {
         "value": "Bomb Model Kanna",
         "viewValue": "Bomb Model Kanna",
         "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1097_s.png",
@@ -312,10 +330,22 @@ export const allHeroInfo = [
         "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c2024_s.png"
     },
     {
+        "value": "Brieg",
+        "viewValue": "Brieg",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1145_s.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1145_s.png"
+    },
+    {
         "value": "Butcher Corps Inquisitor",
         "viewValue": "Butcher Corps Inquisitor",
         "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3001_s.png",
         "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3001_s.png"
+    },
+    {
+        "value": "Byblis",
+        "viewValue": "Byblis",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1154_s.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1154_s.png"
     },
     {
         "value": "Camilla",
@@ -456,6 +486,12 @@ export const allHeroInfo = [
         "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1028_s.png"
     },
     {
+        "value": "Claudia",
+        "viewValue": "Claudia",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3156_s.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3156_s.png"
+    },
+    {
         "value": "Closer Charles",
         "viewValue": "Closer Charles",
         "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c2027_s.png",
@@ -582,6 +618,12 @@ export const allHeroInfo = [
         "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3044_s.png"
     },
     {
+        "value": "Dragon King Sharun",
+        "viewValue": "Dragon King Sharun",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c2132_s.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c2132_s.png"
+    },
+    {
         "value": "Eaton",
         "viewValue": "Eaton",
         "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3094_s.png",
@@ -624,6 +666,12 @@ export const allHeroInfo = [
         "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3054_s.png"
     },
     {
+        "value": "Elvira",
+        "viewValue": "Elvira",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1148_s.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1148_s.png"
+    },
+    {
         "value": "Emilia",
         "viewValue": "Emilia",
         "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1116_s.png",
@@ -640,6 +688,18 @@ export const allHeroInfo = [
         "viewValue": "Ervalen",
         "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1108_s.png",
         "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1108_s.png"
+    },
+    {
+        "value": "Eternal Wanderer Ludwig",
+        "viewValue": "Eternal Wanderer Ludwig",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c2069_s.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c2069_s.png"
+    },
+    {
+        "value": "Ezra",
+        "viewValue": "Ezra",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3157_s.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3157_s.png"
     },
     {
         "value": "Fairytale Tenebria",
@@ -682,6 +742,12 @@ export const allHeroInfo = [
         "viewValue": "Free Spirit Tieria",
         "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3026_s.png",
         "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3026_s.png"
+    },
+    {
+        "value": "Fumyr",
+        "viewValue": "Fumyr",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1147_s.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1147_s.png"
     },
     {
         "value": "Furious",
@@ -810,6 +876,12 @@ export const allHeroInfo = [
         "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c2085_s.png"
     },
     {
+        "value": "Infinite Horizon Achates",
+        "viewValue": "Infinite Horizon Achates",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c6017_s.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c6017_s.png"
+    },
+    {
         "value": "Iseria",
         "viewValue": "Iseria",
         "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1024_s.png",
@@ -856,6 +928,12 @@ export const allHeroInfo = [
         "viewValue": "Juni",
         "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3151_s.png",
         "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3151_s.png"
+    },
+    {
+        "value": "Kane",
+        "viewValue": "Kane",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1152_s.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1152_s.png"
     },
     {
         "value": "Karin",
@@ -952,6 +1030,12 @@ export const allHeroInfo = [
         "viewValue": "Last Rider Krau",
         "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c2070_s.png",
         "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c2070_s.png"
+    },
+    {
+        "value": "Leah",
+        "viewValue": "Leah",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3163_s.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3163_s.png"
     },
     {
         "value": "Lena",
@@ -1116,6 +1200,12 @@ export const allHeroInfo = [
         "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c4023_s.png"
     },
     {
+        "value": "Midnight Gala Lilias",
+        "viewValue": "Midnight Gala Lilias",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c5089_s.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c5089_s.png"
+    },
+    {
         "value": "Mighty Scout",
         "viewValue": "Mighty Scout",
         "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/m0063_s.png",
@@ -1180,6 +1270,12 @@ export const allHeroInfo = [
         "viewValue": "Muwi",
         "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3132_s.png",
         "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c3132_s.png"
+    },
+    {
+        "value": "Nahkwol",
+        "viewValue": "Nahkwol",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/nahkwolPortrait.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/nahkwolPortrait.png"
     },
     {
         "value": "Navy Captain Landy",
@@ -1512,6 +1608,12 @@ export const allHeroInfo = [
         "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c2048_s.png"
     },
     {
+        "value": "Silvertide Christy",
+        "viewValue": "Silvertide Christy",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c4123_s.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c4123_s.png"
+    },
+    {
         "value": "Sinful Angelica",
         "viewValue": "Sinful Angelica",
         "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c2062_s.png",
@@ -1686,10 +1788,22 @@ export const allHeroInfo = [
         "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c4004_s.png"
     },
     {
+        "value": "Urban Shadow Choux",
+        "viewValue": "Urban Shadow Choux",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c2101_s.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c2101_s.png"
+    },
+    {
         "value": "Verdant Adin",
         "viewValue": "Verdant Adin",
         "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c4143_s.png",
         "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c4143_s.png"
+    },
+    {
+        "value": "Veronica",
+        "viewValue": "Veronica",
+        "thumbnail": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1150_s.png",
+        "image": "https://raw.githubusercontent.com/fribbels/Fribbels-Epic-7-Optimizer/main/data/cachedimages/c1150_s.png"
     },
     {
         "value": "Vigilante Leader Glenn",

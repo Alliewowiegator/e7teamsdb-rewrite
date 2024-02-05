@@ -20,7 +20,7 @@ export default function Home() {
           </Text>
 
           <Button       variant="gradient" fullWidth mt="md" radius="md"
-                        gradient={{ from: 'purple', to: 'cyan', deg: 90 }}>
+                        gradient={{ from: 'grape', to: 'violet', deg: 90 }}>
             Submit A New Team
           </Button>
         </Card>
@@ -41,7 +41,7 @@ export default function Home() {
             down to what you need.
           </Text>
 
-          <Button variant={"gradient"} fullWidth mt="md" radius="md" gradient={{ from: 'purple', to: 'cyan', deg: 90 }}>
+          <Button variant={"gradient"} fullWidth mt="md" radius="md" gradient={{ from: 'grape', to: 'violet', deg: 90 }}>
             View The Database
           </Button>
         </Card>

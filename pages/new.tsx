@@ -19,22 +19,23 @@ import {Hero} from '@/interfaces'
 import HeroEditModal from "@/components/HeroEditModal";
 import {useDisclosure} from "@mantine/hooks";
 
-export default function New() {
-    const [heroes, setHeroes] = useState([new Hero()])
+export default function New(): JSX.Element {
     const [username, setUsername] = useState<string>('');
     const [server, setServer] = useState<string>('');
-    const [teamType, setTeamType] = useState<string | null>('');
     const [teamDescription, setTeamDescription] = useState<string>('');
+    const [teamType, setTeamType] = useState<string | null>('');
+    const [heroes, setHeroes] = useState<Hero[]>([new Hero()])
     const [opened, {open, close}] = useDisclosure(false);
-    const [heroToEdit, setEditHero] = useState(new Hero());
+    const [heroToEdit, setEditHero] = useState<Hero>(new Hero());
     const [editIndex, setEditIndex] = useState<number>();
 
-    const openEdit = (heroToEdit: number) => {
+    const openEdit = (heroToEdit: number): void => {
         setEditIndex(heroToEdit);
         setEditHero({...heroes[heroToEdit]})
         open()
     }
-    const removeHero = (heroToRemove: number) => setHeroes(heroes.filter((hero, index) => index !== heroToRemove));
+
+    const removeHero = (heroToRemove: number): void => setHeroes(heroes.filter((hero, index) => index !== heroToRemove));
 
     const teamTypes: string[] = [
         "Wyvern", "Banshee", "Golem", "Guild War Defense", "Guild War Offense",
@@ -42,7 +43,10 @@ export default function New() {
         "Blooming Snag Lich", "Pain Pursuer Moroi", "Hopeless Symaqus", "Destructive Gigantes", "Other",
     ];
 
-    const teamTags: string[] = ['Cleave', 'Counter', 'Speed', 'Bomb Squad', 'Cleanse', 'One-Shot', 'Sustain', 'Bruiser', 'Push', 'Injury', 'Burn', 'Control'];
+    const teamTags: string[] = [
+        'Cleave', 'Counter', 'Speed', 'Bomb Squad', 'Cleanse', 'One-Shot',
+        'Sustain', 'Bruiser', 'Push', 'Injury', 'Burn', 'Control'
+    ];
 
     return (
         <Grid>
@@ -106,7 +110,6 @@ export default function New() {
                             <Grid.Col span={{base: 12, md: 12, lg: 4}}>
                                 <MultiSelect
                                     label="Team Tags"
-                                    placeholder="Tag"
                                     data={teamTags}
                                 />
                             </Grid.Col>
@@ -117,7 +120,7 @@ export default function New() {
             <Grid.Col span={12}>
                 <Paper shadow="xs" withBorder p="xl">
                     <Grid>
-                        {heroes.map((hero, index) => {
+                        {heroes.map((hero: Hero, index: number) => {
                             return (
                                 <Grid.Col span={{base: 12, md: 12, lg: 3}} key={index}>
                                     <HeroEditPreview heroData={hero} index={index} removeHero={removeHero} openEdit={openEdit}/>
@@ -133,7 +136,7 @@ export default function New() {
                         disabled={heroes.length >= 4}
                         radius="md" gradient={{from: 'purple', to: 'cyan', deg: 90}}
                         onClick={() => {
-                            setHeroes((heroes) => [...heroes, new Hero()])
+                            setHeroes((heroes: Hero[]) => [...heroes, new Hero()])
                         }}
                 >
                     Add New Hero
