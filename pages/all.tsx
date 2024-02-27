@@ -1,11 +1,15 @@
 import {
+    Alert,
     Grid, MultiSelect, Paper,
 } from '@mantine/core';
 import CompPreview from "@/components/CompPreview";
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import clientPromise from "@/utility/mongodb";
 import {allHeroInfo} from "@/data/heroData";
+import {useEffect, useState} from "react";
+import composition from "@/models/Composition";
 const utilityData = require('../utility/utility');
+import { IconInfoCircle } from '@tabler/icons-react';
 
 
 export const getServerSideProps = (async () => {
@@ -19,12 +23,64 @@ export const getServerSideProps = (async () => {
 
         return { props: { teamComp: JSON.parse(JSON.stringify(teamCompositions))} }
     } catch (e) {
-        // TODO add UI error communication
+        // TODO: add UI error communication
         console.error(e)
     }
 })
 
 export default function All({teamComp}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+    const [filterContent, setFilterContent] = useState<string[]>([]);
+    const [filterTags, setFilterTags] = useState<string[]>([]);
+    const [filterHeroes, setFilterHeroes] = useState<string[]>([]);
+    const [filteredData, setFilteredData] = useState<any[]>(teamComp);
+    const icon = <IconInfoCircle />;
+    const filteredContent = () => {
+        if (filteredData.length === 0) {
+            return (
+                <Grid.Col span={{base: 12, md: 12, lg: 12}}>
+                    <Alert variant="light" color="violet" title="Filtering Error" icon={icon}>
+                        No teams were found with your specified filters.
+                    </Alert>
+                </Grid.Col>
+            )
+        } else {
+            return (
+                filteredData.map((composition: any, index: number) => {
+                        return (
+                            <Grid.Col span={{base: 12, md: 4, lg: 3}} key={index}>
+                                <CompPreview {...composition} key={index} />
+                            </Grid.Col>
+                        )
+                    }
+                )
+            )
+        }
+    }
+
+    useEffect(() => {
+        if (filterContent.length || filterTags.length || filterHeroes.length) {
+            let filteredList = teamComp.filter((composition: any) => {
+                if (filterContent.length  && !filterContent.some(contentItem => composition.teamInfo.teamType.includes(contentItem))) {
+                    return false;
+                }
+
+                // 2. Filter by tags
+                if (filterTags.length && !filterTags.every(tag => composition.teamInfo.teamTags.includes(tag))) {
+                    return false; // Exclude if not all tags match
+                }
+
+
+                return !(filterHeroes.length && !filterHeroes.every(filterHero =>
+                    composition.heroes.some((compHero: any) => compHero.name === filterHero)));
+
+                 // Passes all filters
+            });
+
+            setFilteredData(filteredList);
+        } else {
+            setFilteredData(teamComp); // Reset to original data
+        }
+    }, [filterContent, filterTags, filterHeroes]);
 
     return (
         <Grid>
@@ -33,20 +89,32 @@ export default function All({teamComp}: InferGetServerSidePropsType<typeof getSe
                     <Grid>
                         <Grid.Col span={{base: 12, md: 4, lg: 4}}>
                             <MultiSelect
-                                label="Filter By Content Type"
+                                label="Filter By Content"
                                 data={utilityData.teamTypes}
+                                maxValues={3}
+                                searchable
+                                value={filterContent}
+                                onChange={(event: string[]) => setFilterContent(event)}
                             />
                         </Grid.Col>
                         <Grid.Col span={{base: 12, md: 4, lg: 4}}>
                             <MultiSelect
                                 label="Filter By Tags"
                                 data={utilityData.teamTags}
+                                maxValues={3}
+                                searchable
+                                value={filterTags}
+                                onChange={(event: string[]) => setFilterTags(event)}
                             />
                         </Grid.Col>
                         <Grid.Col span={{base: 12, md: 4, lg: 4}}>
                             <MultiSelect
                                 label="Filter By Heroes"
                                 data={allHeroInfo.map(hero => hero.value)}
+                                maxValues={4}
+                                searchable
+                                value={filterHeroes}
+                                onChange={(event: string[]) => setFilterHeroes(event)}
                             />
                         </Grid.Col>
                     </Grid>
@@ -55,13 +123,7 @@ export default function All({teamComp}: InferGetServerSidePropsType<typeof getSe
             <Grid.Col span={12}>
                 <Paper shadow="xs" withBorder p="xl">
                     <Grid>
-                        {teamComp.map((composition: any, index: number) => {
-                            return (
-                                <Grid.Col span={{base: 12, md: 4, lg: 3}} key={index}>
-                                    <CompPreview {...composition} key={index} />
-                                </Grid.Col>
-                            )
-                        })}
+                        {filteredContent()}
                     </Grid>
                 </Paper>
             </Grid.Col>

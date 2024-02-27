@@ -10,13 +10,12 @@ import {
     Avatar,
     Center,
     ThemeIcon,
-    ActionIcon
+    ActionIcon, Divider
 } from "@mantine/core";
 import {IconLink, IconPhoto} from "@tabler/icons-react";
 import {allHeroInfo} from "@/data/heroData";
 
 export default function CompPreview(props: any) {
-
     function getHeroPortrait (heroName: string) {
         const hero = allHeroInfo.find(hero => hero.value === heroName);
         return hero ? hero.thumbnail : null
@@ -41,14 +40,17 @@ export default function CompPreview(props: any) {
                             <IconLink/>
                         </ActionIcon>
                     </Center>
+                </Grid.Col>
 
+                <Grid.Col span={12}>
+                    <Divider />
                 </Grid.Col>
 
                 <Grid.Col span={12}>
                     <Center>
-                        <Group>
+                        <Group preventGrowOverflow={true} grow>
                             {props.heroes.map((hero:any, index: number) => {
-                               return <Avatar src={getHeroPortrait(hero.name)} size="lg" key={index} />
+                               return <Avatar src={getHeroPortrait(hero.name)} size="xl" key={index} />
                             })}
                         </Group>
                     </Center>
@@ -58,7 +60,7 @@ export default function CompPreview(props: any) {
                         <Group>
                             {props.teamInfo.teamTags.map((tag: string, index: number) => {
                                 return (
-                                    <Badge color="violet" key={index}>
+                                    <Badge color="violet" radius={"sm"} key={index}>
                                         {tag}
                                     </Badge>
                                 )

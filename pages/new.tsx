@@ -97,6 +97,7 @@ export default function New(): JSX.Element {
                                     label={"Team Description"}
                                     value={teamDescription}
                                     onChange={(event) => setTeamDescription(event.currentTarget.value)}
+                                    maxLength={30}
                                 />
                             </Grid.Col>
                             <Grid.Col span={{base: 12, md: 12, lg: 4}}>
@@ -111,6 +112,7 @@ export default function New(): JSX.Element {
                                 <MultiSelect
                                     label="Team Tags"
                                     data={teamTags}
+                                    maxValues={3}
                                 />
                             </Grid.Col>
                         </Grid>

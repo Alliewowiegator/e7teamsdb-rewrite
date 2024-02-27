@@ -28055,7 +28055,6 @@ let heroData = {
 
 // Simple script I made to parse data I need from https://api.epicsevendb.com/#/default/get_hero / https://github.com/fribbels/Fribbels-Epic-7-Optimizer/blob/main/data/cache/herodata.json
 for (const hero in heroData) {
-    console.log(hero)
     let parsedData = { value: heroData[hero].name, viewValue: heroData[hero].name, thumbnail: heroData[hero].assets.icon, image: heroData[hero].assets.icon }
     data.push(parsedData)
 }
@@ -28068,5 +28067,4 @@ data.sort(function (current, next) {
 
 fsPromises.writeFile('./newHeroData.json', JSON.stringify(data, null, 1), (err) => {
     if (err) throw err
-    console.log('complete');
 })
