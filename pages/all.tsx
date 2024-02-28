@@ -3,13 +3,14 @@ import {
     Grid, MultiSelect, Paper,
 } from '@mantine/core';
 import CompPreview from "@/components/CompPreview";
-import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
+import type {InferGetServerSidePropsType, GetServerSideProps} from 'next'
 import clientPromise from "@/utility/mongodb";
 import {allHeroInfo} from "@/data/heroData";
 import {useEffect, useState} from "react";
 import composition from "@/models/Composition";
+
 const utilityData = require('../utility/utility');
-import { IconInfoCircle } from '@tabler/icons-react';
+import {IconInfoCircle} from '@tabler/icons-react';
 
 
 export const getServerSideProps = (async () => {
@@ -21,7 +22,7 @@ export const getServerSideProps = (async () => {
             .find({})
             .toArray()
 
-        return { props: { teamComp: JSON.parse(JSON.stringify(teamCompositions))} }
+        return {props: {teamComp: JSON.parse(JSON.stringify(teamCompositions))}}
     } catch (e) {
         // TODO: add UI error communication
         console.error(e)
@@ -33,7 +34,7 @@ export default function All({teamComp}: InferGetServerSidePropsType<typeof getSe
     const [filterTags, setFilterTags] = useState<string[]>([]);
     const [filterHeroes, setFilterHeroes] = useState<string[]>([]);
     const [filteredData, setFilteredData] = useState<any[]>(teamComp);
-    const icon = <IconInfoCircle />;
+    const icon = <IconInfoCircle/>;
     const filteredContent = () => {
         if (filteredData.length === 0) {
             return (
@@ -48,7 +49,7 @@ export default function All({teamComp}: InferGetServerSidePropsType<typeof getSe
                 filteredData.map((composition: any, index: number) => {
                         return (
                             <Grid.Col span={{base: 12, md: 4, lg: 3}} key={index}>
-                                <CompPreview {...composition} key={index} />
+                                <CompPreview {...composition} key={index}/>
                             </Grid.Col>
                         )
                     }
@@ -60,26 +61,25 @@ export default function All({teamComp}: InferGetServerSidePropsType<typeof getSe
     useEffect(() => {
         if (filterContent.length || filterTags.length || filterHeroes.length) {
             let filteredList = teamComp.filter((composition: any) => {
-                if (filterContent.length  && !filterContent.some(contentItem => composition.teamInfo.teamType.includes(contentItem))) {
+                if (filterContent.length && !filterContent.some(contentItem => composition.teamInfo.teamType.includes(contentItem))) {
                     return false;
                 }
 
-                // 2. Filter by tags
                 if (filterTags.length && !filterTags.every(tag => composition.teamInfo.teamTags.includes(tag))) {
-                    return false; // Exclude if not all tags match
+
                 }
 
 
                 return !(filterHeroes.length && !filterHeroes.every(filterHero =>
                     composition.heroes.some((compHero: any) => compHero.name === filterHero)));
 
-                 // Passes all filters
             });
 
             setFilteredData(filteredList);
-        } else {
-            setFilteredData(teamComp); // Reset to original data
         }
+
+        return () => setFilteredData(teamComp);
+
     }, [filterContent, filterTags, filterHeroes]);
 
     return (
