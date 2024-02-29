@@ -7,8 +7,6 @@ import type {InferGetServerSidePropsType, GetServerSideProps} from 'next'
 import clientPromise from "@/utility/mongodb";
 import {allHeroInfo} from "@/data/heroData";
 import {useEffect, useState} from "react";
-import composition from "@/models/Composition";
-
 const utilityData = require('../utility/utility');
 import {IconInfoCircle} from '@tabler/icons-react';
 
@@ -65,10 +63,9 @@ export default function All({teamComp}: InferGetServerSidePropsType<typeof getSe
                     return false;
                 }
 
-                if (filterTags.length && !filterTags.every(tag => composition.teamInfo.teamTags.includes(tag))) {
-
+                if (filterTags.length && !filterTags.every((tag: string) => composition.teamInfo.teamTags.includes(tag))) {
+                    return false;
                 }
-
 
                 return !(filterHeroes.length && !filterHeroes.every(filterHero =>
                     composition.heroes.some((compHero: any) => compHero.name === filterHero)));
