@@ -28,10 +28,7 @@ export default function CompPreview(props: any) {
                 <Grid.Col span={4}>
                     <Text fw={500}>{props.teamInfo.teamType}</Text>
                 </Grid.Col>
-                <Grid.Col span={7}>
-                    <Text fw={200}>{props.teamInfo.teamDescription}</Text>
-                </Grid.Col>
-                <Grid.Col span={1}>
+                <Grid.Col span={1} offset={7}>
                     <Center>
                         <ActionIcon variant="gradient"
                                     size="sm"
@@ -50,7 +47,7 @@ export default function CompPreview(props: any) {
                     <Center>
                         <Group preventGrowOverflow={true} grow>
                             {props.heroes.map((hero:any, index: number) => {
-                               return <Avatar src={getHeroPortrait(hero.name)} size="xl" key={index} />
+                               return <Avatar src={getHeroPortrait(hero.name)} size="xl" key={index} variant='outline'/>
                             })}
                         </Group>
                     </Center>
